@@ -1,0 +1,10 @@
+APP/Project/*.uvguix.*
+APP/Project/OBJ/*
+!APP/Project/OBJ/*.hex
+!APP/Project/OBJ/*.bin
+
+Library/USER/*.uvguix.*
+Library/OBJ/*
+!Library/OBJ/*.lib
+
+Template.uvmpw.uvgui.chen
