@@ -1,4 +1,5 @@
 #include "led.h"
+#include "lcd.h"
 #include "delay.h"
 #include "sys.h"
 #include "usart.h"
@@ -77,6 +78,15 @@ int main(void)
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //中断分组配置
 	uart_init(115200);    //串口波特率设置
 	LED_Init();         //LED初始化
+	
+	LCD_Init();			//LCD初始化	
+	
+	POINT_COLOR = RED;
+	LCD_ShowString(30,10,200,30,16,"ALIENTEK STM32F1");	
+	LCD_ShowString(30,20,200,16,16,"UCOSIII Examp 6-1");
+	LCD_ShowString(30,50,200,16,16,"Task Creat and Del");
+	LCD_ShowString(30,60,200,16,16,"ATOM@ALIENTEK");
+	LCD_ShowString(30,90,200,16,16,"2015/3/19");
 	
 	OSInit(&err);		//初始化UCOSIII
 	OS_CRITICAL_ENTER();//进入临界区
